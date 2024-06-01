@@ -1,0 +1,19 @@
+<% if @article.errors.any? %>
+  <h2>Errors were found when trying to save this article: </h2>
+  <ul>
+    <% @article.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+<%= form_with(model: @article, local:true) do |form| %>
+  <p>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </p>
+  <%= form.submit %>
+<% end %>
