@@ -1,3 +1,8 @@
+# frozen_string_literal: true
+
+#
+# Controller for articles
+#
 class ArticlesController < ApplicationController
   before_action :article_by_id, only: %i[show edit update destroy]
 
