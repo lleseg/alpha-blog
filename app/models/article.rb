@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-#  
+#
 # Class to create articles
 #
 class Article < ApplicationRecord
