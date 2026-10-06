@@ -1,9 +1,3 @@
-databases:
-  - name: alpha_blog
-    databaseName: alpha_blog
-    user: alpha_blog
-    plan: free
-
 services:
   - type: web
     name: alpha-blog
@@ -13,9 +7,7 @@ services:
     startCommand: "bundle exec rails server"
     envVars:
       - key: DATABASE_URL
-        fromDatabase:
-          name: alpha_blog
-          property: connectionString
+        sync:  false
       - key: RAILS_MASTER_KEY
         sync: false
       - key: WEB_CONCURRENCY
