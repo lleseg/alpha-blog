@@ -3,7 +3,7 @@
   <div class="container text-center mt-4">
     <h1>Edit an article</h1>
     <br>
-    <%= render 'form' %>
+    <%= render :partial => 'form', locals: { article: @article } %>
     <br>
     <p><%= link_to 'Cancel and return to the list', articles_path %></p>
   </div>

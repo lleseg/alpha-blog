@@ -1,12 +1,12 @@
-<% if @article.errors.any? %>
+<% if article.errors.any? %>
   <h2>Errors were found when trying to save this article: </h2>
   <ul>
-    <% @article.errors.full_messages.each do |error| %>
+    <% article.errors.full_messages.each do |error| %>
       <li><%= error %></li>
     <% end %>
   </ul>
 <% end %>
-<%= form_with(model: @article, local:true, class: "m-auto w-50") do |form| %>
+<%= form_with(model: article, local:true, class: "m-auto w-50") do |form| %>
   <div class="mb-3">
     <%= form.label :title, class: "form-label" %>
     <%= form.text_field :title, class: "form-control" %>
@@ -14,7 +14,7 @@
   <div class="mb-3">
     <%= form.label :description, class: "form-label" %>
     <%= form.text_area :description, class: "form-control" %>
-  </>
+  </div>
   <div class="mb-3">
     <%= form.submit "Submit", class: "btn btn-primary" %>
   </div>

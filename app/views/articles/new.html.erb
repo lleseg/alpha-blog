@@ -3,7 +3,7 @@
   <div class="container text-center mt-4">
     <h1>Create a new article</h1>
     <br>
-    <%= render 'form' %>
+    <%= render :partial => 'form', locals: { article: @article } %>
     <br>
     <p><%= link_to 'Return to the list', articles_path %></p>
   </div>
