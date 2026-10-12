@@ -1,0 +1,13 @@
+.home-hero {
+  padding-block: 6rem 7rem;
+}
+
+.home-hero-lead {
+  max-width: 34rem;
+}
+
+@include media-breakpoint-down(md) {
+  .home-hero {
+    padding-block: 4rem 5rem;
+  }
+}

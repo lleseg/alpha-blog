@@ -1,5 +1,17 @@
-<div class="container">
-  <div class="container text-center mt-4">
-    <h1>About</h1>
+<div class="container py-5">
+  <div class="col-lg-7">
+    <h1 class="display-5 fw-bold mb-4">About</h1>
+    <p class="fs-5">
+      Alpha Blog is a small place for short articles: a title, a few lines, and that's it.
+      Anyone can read what is here, write a new article, or edit and delete one.
+    </p>
+    <p class="fs-5 text-body-secondary">
+      It started as a practice project to learn Ruby on Rails, and it keeps growing as I add features.
+      It's built with Ruby on Rails and Bootstrap.
+    </p>
+    <div class="d-flex flex-wrap gap-2 mt-4">
+      <%= link_to "Read articles", articles_path, class: "btn btn-dark" %>
+      <%= link_to "Write an article", new_article_path, class: "btn btn-outline-dark" %>
+    </div>
   </div>
 </div>
