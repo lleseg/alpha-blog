@@ -1,10 +1,19 @@
 <div class="container py-5">
   <div class="col-lg-7">
-    <h1 class="display-5 fw-bold mb-4">Article details</h1>
-    <p><strong>Title: </strong><%= @article.title %></p>
-    <p><strong>Description: </strong><%= @article.description %></p>
-    <p class="mt-4">
-      <%= link_to 'Edit', edit_article_path(@article) %> | <%= link_to 'Delete', article_path(@article), data:{ turbo_method: :delete, turbo_confirm: "Are you sure?" } %> | <%= link_to 'Return to the list', articles_path %>
-    </p>
+    <h1 class="display-5 fw-bold mb-4"><%= @article.title %></h1>
+    <div class="card text-center">
+      <div class="card-header">
+        <p class="fst-italic my-2">by Roland Garros</p>
+      </div>
+      <div class="card-body py-4">
+        <div class="card-text"><%= simple_format(@article.description) %></div>
+        <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-outline-dark" %>
+        <%= link_to 'Delete', article_path(@article), class: "btn btn-outline-dark",
+                                                      data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+      </div>
+      <div class="card-footer text-muted">
+        <p class="my-2">Created <%= time_ago_in_words(@article.created_at) %> ago, last edited <%= time_ago_in_words(@article.updated_at) %> ago</p>
+      </div>
+    </div>
   </div>
 </div>

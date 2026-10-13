@@ -7,13 +7,15 @@
           <div class="card-header">
             <p class="fst-italic my-2">by Roland Garros</p>
           </div>
-          <div class="card-body py-4">
+          <div class="card-body py-4 d-flex flex-column">
             <h5 class="card-title"><%= article.title %></h5>
-            <p class="card-text"><%= article.description %></p>
-            <%= link_to 'Show', article_path(article), class: "btn btn-dark" %>
-            <%= link_to 'Edit', edit_article_path(article), class: "btn btn-outline-dark" %>
-            <%= link_to 'Delete', article_path(article), class: "btn btn-outline-dark",
-                                                         data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+            <p class="card-text"><%= truncate(article.description, length: 100) %></p>
+            <div class="mt-auto">
+              <%= link_to 'Show', article_path(article), class: "btn btn-dark" %>
+              <%= link_to 'Edit', edit_article_path(article), class: "btn btn-outline-dark" %>
+              <%= link_to 'Delete', article_path(article), class: "btn btn-outline-dark",
+                                                           data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+            </div>
           </div>
           <div class="card-footer text-muted">
             <p class="my-2">Created <%= time_ago_in_words(article.created_at) %> ago, last edited <%= time_ago_in_words(article.updated_at) %> ago</p>
