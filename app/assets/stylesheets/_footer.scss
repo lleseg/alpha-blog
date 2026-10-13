@@ -1,4 +1,10 @@
+$footer-height: 60px;
+
+body {
+  padding-bottom: $footer-height;
+}
+
 .footer {
-  height: 60px;
-  line-height: 60px;
+  height: $footer-height;
+  line-height: $footer-height;
 }
