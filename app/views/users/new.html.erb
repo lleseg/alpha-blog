@@ -1,7 +1,7 @@
 <div class="container py-5">
   <div class="col-lg-7">
     <h1 class="display-5 fw-bold mb-4">Sign up for Alpha Blog</h1>
-    <%= render :partial => 'form', locals: { user: @user } %>
+    <%= render 'form', user: @user %>
     <p class="mt-4"><%= link_to 'Return to the list', users_path %></p>
   </div>
 </div>
