@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-#
-# Controller for articles
-#
 class ArticlesController < ApplicationController
   before_action :article_by_id, only: %i[show edit update destroy]
 
@@ -20,7 +17,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    @article.user_id = User.first
+    @article.user_id = User.first.id
     if @article.save
       flash[:notice] = "Article was saved successfully."
       redirect_to @article

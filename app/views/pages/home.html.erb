@@ -4,9 +4,10 @@
     <p class="home-hero-lead fs-4 text-body-secondary mb-4">
       Short articles on whatever is worth writing down. Read what is here, or add your own.
     </p>
-    <div class="d-flex flex-wrap gap-2">
+    <div class="d-flex flex-wrap gap-2 mb-3">
       <%= link_to "Read articles", articles_path, class: "btn btn-light btn-lg" %>
       <%= link_to "Write an article", new_article_path, class: "btn btn-outline-light btn-lg" %>
     </div>
+    <p class="fs-4 text-body-secondary">Sign up <%= link_to "here", signup_path, class: "link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover" %> if you want to start writing!</p>
   </div>
 </section>

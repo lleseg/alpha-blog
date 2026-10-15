@@ -9,7 +9,7 @@ class User < ApplicationRecord
             length: { minimum: 3, maximum: 25 }
   validates :email,
             presence: true,
-            format: { with: URI::MailTo::EMAIL_REGEXP, message: "is not a valid email!" },
+            format: { with: URI::MailTo::EMAIL_REGEXP },
             uniqueness: { case_sensitive: false },
             length: { maximum: 105 }
   has_secure_password
