@@ -1,0 +1,25 @@
+<div class="container py-5">
+  <h1 class="display-5 fw-bold mb-4">All our bloggers</h1>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <% @users.each do |user| %>
+      <div class="col">
+        <div class="card text-center h-100">
+          <div class="card-header">
+            <p class="fst-italic my-2"><%= link_to user.username, user %></p>
+          </div>
+          <div class="card-body py-4 d-flex flex-column">
+            <h5 class="card-title"><%= link_to gravatar_for(user, size: 150), user %></h5>
+            <p class="card-text"><%= pluralize(user.articles.count, "article") %></p>
+            <div class="mt-auto">
+              <%= link_to 'Show profile', user, class: "btn btn-dark" %>
+              <%= link_to 'Edit profile', edit_user_path(user), class: "btn btn-outline-dark" %>
+            </div>
+          </div>
+          <div class="card-footer text-muted">
+            <p class="my-2">Joined <%= time_ago_in_words(user.created_at) %> ago, last edited <%= time_ago_in_words(user.updated_at) %> ago</p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
