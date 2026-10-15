@@ -3,7 +3,7 @@
     <h1 class="display-5 fw-bold mb-4"><%= @article.title %></h1>
     <div class="card text-center">
       <div class="card-header">
-        <p class="fst-italic my-2">by Roland Garros</p>
+        <p class="fst-italic my-2"><%= @article.user.username %></p>
       </div>
       <div class="card-body py-4">
         <div class="card-text"><%= simple_format(@article.description) %></div>
