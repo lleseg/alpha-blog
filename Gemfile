@@ -54,3 +54,5 @@ end
 gem "rubocop", "~> 1.69", :group => :development
 
 gem "cssbundling-rails", "~> 1.4"
+
+gem 'bcrypt', '~> 3.1.7'

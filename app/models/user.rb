@@ -12,4 +12,5 @@ class User < ApplicationRecord
             format: { with: URI::MailTo::EMAIL_REGEXP, message: "is not a valid email!" },
             uniqueness: { case_sensitive: false },
             length: { maximum: 105 }
+  has_secure_password
 end
