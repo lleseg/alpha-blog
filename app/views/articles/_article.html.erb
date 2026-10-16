@@ -1,7 +1,7 @@
 <div class="col">
   <div class="card text-center h-100">
     <div class="card-header">
-      <p class="fst-italic my-2"><%= article.user.username %></p>
+      <p class="fst-italic my-2">by <%= link_to article.user.username, user_path(article.user), class: "link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover" %></p>
     </div>
     <div class="card-body py-4 d-flex flex-column">
       <h5 class="card-title"><%= article.title %></h5>
