@@ -15,7 +15,9 @@
             Articles
           </button>
           <ul class="dropdown-menu">
-            <%= link_to 'Create a new article', new_article_path, class: "dropdown-item" %>
+            <% if logged_in? %>
+              <%= link_to 'Create a new article', new_article_path, class: "dropdown-item" %>
+            <% end %>
             <%= link_to 'View the articles', articles_path, class: "dropdown-item" %>
           </ul>
         </li>
