@@ -4,15 +4,11 @@ import 'controllers';
 import 'bootstrap';
 
 const showToasts = () => {
-  const toastElementList = document.querySelectorAll('.toast:not(.show)');
-
-  [...toastElementList].map((toastElement) => {
-    const toast = new window.bootstrap.Toast(toastElement);
-
-    toast.show();
+  document.querySelectorAll('.toast:not(.show)').forEach((toastElement) => {
+    window.bootstrap.Toast.getOrCreateInstance(toastElement).show();
   });
 };
 
 document.addEventListener('DOMContentLoaded', showToasts);
-
 document.addEventListener('turbo:load', showToasts);
+document.addEventListener('turbo:render', showToasts);
