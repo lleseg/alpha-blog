@@ -3,5 +3,9 @@
     <h1 class="display-5 fw-bold mb-4">Edit your profile</h1>
     <%= render 'form', user: @user %>
     <p class="mt-4"><%= link_to 'Cancel and return to the article list', articles_path, class: "link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover" %></p>
+    <hr class="my-5">
+    <h2 class="h4 fw-bold">Delete your profile</h2>
+    <p class="text-body-secondary">This deletes your profile and all your articles. It can't be undone.</p>
+    <%= link_to "Delete profile", user_path(@user), class: "btn btn-outline-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
   </div>
 </div>
