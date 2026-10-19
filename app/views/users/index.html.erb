@@ -12,9 +12,13 @@
             <p class="card-text"><%= pluralize(user.articles.count, "article") %></p>
             <div class="mt-auto">
               <%= link_to 'Show profile', user, class: "btn btn-dark" %>
-              <% if logged_in? && user == current_user %>
-                <%= link_to 'Edit profile', edit_user_path(user), class: "btn btn-outline-dark" %>
-                <%= link_to "Delete profile", user_path(user), class: "btn btn-outline-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+              <% if logged_in? %>
+                <% if user == current_user %>
+                  <%= link_to 'Edit profile', edit_user_path(user), class: "btn btn-outline-dark" %>
+                <% end %>
+                <% if current_user.admin? %>
+                  <%= link_to "Delete profile", user_path(user), class: "btn btn-outline-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+                <% end %>
               <% end %>
             </div>
           </div>

@@ -29,7 +29,9 @@
       <ul class="navbar-nav gap-2">
         <% if logged_in? %>
           <li class="nav-item">
-            <%= link_to current_user.username, user_path(current_user), class: "nav-link" %>
+            <%= link_to user_path(current_user), class: "nav-link" do %>
+              <%= "Admin " if current_user.admin? %><%= current_user.username %>
+            <% end %>
           </li>
           <li class="nav-item">
             <%= link_to 'Logout', logout_path, class: "btn btn-dark", data: { turbo_method: :delete } %>
