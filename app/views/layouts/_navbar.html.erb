@@ -10,9 +10,14 @@
           <%= link_to 'Bloggers', users_path, class: "nav-link #{'active' if current_page?(users_path)}",
                                                      aria: { current: ('page' if current_page?(users_path)) } %>
         </li>
-        <li class="nav-item">
-          <%= link_to 'Article list', articles_path, class: "nav-link #{'active' if current_page?(articles_path)}",
-                                                     aria: { current: ('page' if current_page?(articles_path)) } %>
+        <li class="nav-item dropdown">
+          <button class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Articles
+          </button>
+          <ul class="dropdown-menu">
+            <%= link_to 'Create a new article', new_article_path, class: "dropdown-item" %>
+            <%= link_to 'View the articles', articles_path, class: "dropdown-item" %>
+          </ul>
         </li>
         <li class="nav-item">
           <%= link_to 'About', about_path, class: "nav-link #{'active' if current_page?(about_path)}",
