@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
   def show; end
 
   def index
-    @articles = Article.all
+    @pagy, @articles = pagy(:offset, Article.all, limit: 10)
   end
 
   def new

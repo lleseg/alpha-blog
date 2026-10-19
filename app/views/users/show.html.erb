@@ -7,7 +7,9 @@
     <%= link_to "Edit profile", edit_user_path(@user), class: "btn btn-outline-dark" %>
   </div>
   <h2 class="h4 fw-bold mb-3">Articles</h2>
-  <div class="row row-cols-1 row-cols-md-2 g-4">
+  <%== @pagy.series_nav(:bootstrap, id: "pagination-nav", classes: "pagination pagination-sm") %>
+  <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
     <%= render @user.articles %>
   </div>
+  <%== @pagy.series_nav(:bootstrap, id: "pagination-nav", classes: "pagination pagination-sm") %>
 </div>
