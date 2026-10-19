@@ -5,5 +5,4 @@
     <%= render @articles %>
   </div>
   <%== @pagy.series_nav(:bootstrap, id: "pagination-nav", classes: "pagination pagination-sm") if @pagy.pages > 1 %>
-  <p class="my-4"><%= link_to 'Create new article', new_article_path, class: "link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover" %></p>
 </div>
