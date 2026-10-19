@@ -8,9 +8,11 @@
       <p class="card-text"><%= truncate(article.description, length: 100) %></p>
       <div class="mt-auto">
         <%= link_to 'Show', article_path(article), class: "btn btn-dark" %>
-        <%= link_to 'Edit', edit_article_path(article), class: "btn btn-outline-dark" %>
-        <%= link_to 'Delete', article_path(article), class: "btn btn-outline-dark",
+        <% if logged_in? && article.user == current_user %>
+          <%= link_to 'Edit', edit_article_path(article), class: "btn btn-outline-dark" %>
+          <%= link_to 'Delete', article_path(article), class: "btn btn-outline-dark",
                                                      data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        <% end %>
       </div>
     </div>
     <div class="card-footer text-muted">

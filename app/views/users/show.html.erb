@@ -4,7 +4,9 @@
       <div class="flex-shrink-0"><%= gravatar_for @user %></div>
       <h1 class="display-5 fw-bold mb-0"><%= @user.username %>'s profile</h1>
     </div>
-    <%= link_to "Edit profile", edit_user_path(@user), class: "btn btn-outline-dark" %>
+    <% if logged_in? && @user == current_user %>
+      <%= link_to "Edit profile", edit_user_path(@user), class: "btn btn-outline-dark" %>
+    <% end %>
   </div>
   <h2 class="h4 fw-bold mb-3">Articles</h2>
   <%== @pagy.series_nav(:bootstrap, id: "pagination-nav", classes: "pagination pagination-sm") if @pagy.pages > 1 %>
