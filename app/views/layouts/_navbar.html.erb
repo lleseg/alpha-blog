@@ -5,7 +5,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav me-auto">
         <li class="nav-item">
           <%= link_to 'Bloggers', users_path, class: "nav-link #{'active' if current_page?(users_path)}",
                                                      aria: { current: ('page' if current_page?(users_path)) } %>
@@ -18,6 +18,23 @@
           <%= link_to 'About', about_path, class: "nav-link #{'active' if current_page?(about_path)}",
                                            aria: { current: ('page' if current_page?(about_path)) } %>
         </li>
+      </ul>
+      <ul class="navbar-nav gap-2">
+        <% if logged_in? %>
+          <li class="nav-item">
+            <%= link_to current_user.username, user_path(current_user), class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Logout', logout_path, class: "btn btn-dark", data: { turbo_method: :delete } %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'Log in', login_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Sign up', signup_path, class: "btn btn-dark" %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
