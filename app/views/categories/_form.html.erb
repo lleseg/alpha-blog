@@ -1,0 +1,19 @@
+<% if category.errors.any? %>
+  <div class="alert alert-danger" role="alert">
+    <p class="fw-semibold mb-2">Errors were found when trying to save this category:</p>
+    <ul class="mb-0">
+      <% category.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<%= form_with(model: category, local:true) do |form| %>
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.submit "Submit", class: "btn btn-dark" %>
+  </div>
+<% end %>
