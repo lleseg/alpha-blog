@@ -1,6 +1,6 @@
 <% if category.errors.any? %>
   <div class="alert alert-danger" role="alert">
-    <p class="fw-semibold mb-2">Errors were found when trying to save this category:</p>
+    <p id="alert-heading" class="fw-semibold mb-2">Errors were found when trying to save this category:</p>
     <ul class="mb-0">
       <% category.errors.full_messages.each do |error| %>
         <li><%= error %></li>

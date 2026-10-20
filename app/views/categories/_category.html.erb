@@ -1,0 +1,13 @@
+<div class="col">
+  <div class="card text-center h-100">
+    <div class="card-body py-4 d-flex flex-column">
+      <h5 class="card-title"><%= category.name %></h5>
+      <div class="mt-auto">
+        <%= link_to 'Show', category_path(category), class: "btn btn-dark" %>
+      </div>
+    </div>
+    <div class="card-footer text-muted">
+      <p class="my-2">Created <%= time_ago_in_words(category.created_at) %> ago, last edited <%= time_ago_in_words(category.updated_at) %> ago</p>
+    </div>
+  </div>
+</div>
