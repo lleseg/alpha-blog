@@ -23,6 +23,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+    @pagy, @articles = pagy(:offset, @category.articles, limit: 10)
   end
 
   private

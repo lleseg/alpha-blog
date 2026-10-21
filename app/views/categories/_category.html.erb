@@ -2,6 +2,7 @@
   <div class="card text-center h-100">
     <div class="card-body py-4 d-flex flex-column">
       <h5 class="card-title"><%= link_to category.name, category_path(category), class: "link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover" %></h5>
+      <p class="card-text"><%= pluralize(category.articles.count, "article") %></p>
     </div>
     <div class="card-footer text-muted">
       <p class="my-2">Created <%= time_ago_in_words(category.created_at) %> ago, last edited <%= time_ago_in_words(category.updated_at) %> ago</p>
