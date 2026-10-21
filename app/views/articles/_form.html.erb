@@ -22,6 +22,6 @@
     <%= form.select :category_ids, Category.all.order(:name).map { |category| [category.name, category.id] }, { prompt: "Select a category from the list below (more than one option available)" }, { multiple:true, class: "form-select", size: 4 } %>
   </div>
   <div class="mb-3">
-    <%= form.submit "Submit", class: "btn btn-dark" %>
+    <%= form.submit(article.new_record? ? "Create" : "Update", class: "btn btn-dark") %>
   </div>
 <% end %>

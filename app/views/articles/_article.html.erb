@@ -10,7 +10,7 @@
       <h5 class="card-title"><%= article.title %></h5>
       <p class="card-text"><%= truncate(article.description, length: 100) %></p>
       <div class="mt-auto">
-        <%= link_to 'Show', article_path(article), class: "btn btn-dark" %>
+        <%= link_to 'Read', article_path(article), class: "btn btn-dark" %>
         <% if logged_in? && (article.user == current_user || current_user.admin?) %>
           <%= link_to 'Edit', edit_article_path(article), class: "btn btn-outline-dark" %>
           <%= link_to 'Delete', article_path(article), class: "btn btn-outline-dark",

@@ -14,6 +14,6 @@
     <%= form.text_field :name, class: "form-control" %>
   </div>
   <div class="mb-3">
-    <%= form.submit "Submit", class: "btn btn-dark" %>
+    <%= form.submit(category.new_record? ? "Create" : "Update", class: "btn btn-dark") %>
   </div>
 <% end %>
