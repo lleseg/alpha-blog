@@ -4,7 +4,8 @@ require "test_helper"
 
 class ArticleTest < ActiveSupport::TestCase
   test "should save an article with required params" do
-    article = Article.new(title: "Test article", description: "This is a test article for Rails!")
+    user = User.create(username: "john-doe", email: "john@example.com", password: "password")
+    article = Article.new(title: "Test article", description: "This is a test article for Rails!", user: user)
 
     assert article.save
   end

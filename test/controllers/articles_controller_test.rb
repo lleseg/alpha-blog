@@ -4,8 +4,11 @@ require "test_helper"
 
 class ArticlesControllerTest < ActionDispatch::IntegrationTest
   setup do
+    @user = User.create(username: "john-doe", email: "john@example.com", password: "password")
     @article = Article.create(title: "This is an awesome title!",
-                              description: "This is also awesome, but it is a description!")
+                              description: "This is also awesome, but it is a description!",
+                              user: @user)
+    sign_in_as(@user)
   end
 
   test "should show article" do
