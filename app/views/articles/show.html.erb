@@ -4,6 +4,9 @@
     <div class="card text-center">
       <div class="card-header">
         <p class="fst-italic my-2">by <%= link_to @article.user.username, user_path(@article.user), class: "link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover" %></p>
+        <% if @article.categories.any? %>
+          <div class="mt-2"><%= render partial: "categories/badge", collection: @article.categories, as: :category %></div>
+        <% end %>
       </div>
       <div class="card-body py-4">
         <div class="card-text"><%= simple_format(@article.description) %></div>
