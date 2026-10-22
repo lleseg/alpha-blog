@@ -1,6 +1,6 @@
 # alpha-blog
 
-A small multi-user blog built with Ruby on Rails. People sign up, write short articles and manage their own profile; anyone can read.
+A small multi-user blog built with Ruby on Rails. People sign up, write short articles, tag them with categories and manage their own profile; anyone can read.
 
 ## Stack
 
@@ -15,10 +15,11 @@ A small multi-user blog built with Ruby on Rails. People sign up, write short ar
 
 - **Accounts:** sign up, log in and log out. Usernames (3–25 characters) and emails are unique, case insensitive.
 - **Articles:** a title (6–100 characters) and a description (10–300 characters). Invalid forms show the validation errors.
-- **Permissions:** anyone can read articles and profiles. Only logged-in users can write, and only the author can edit or delete an article.
+- **Permissions:** anyone can read articles, categories and profiles. Only logged-in users can write, and only the author can edit or delete an article.
 - **Profiles:** each user has a page with their Gravatar and their articles. Users can edit their profile or delete it, which also deletes their articles.
-- **Admins:** an admin can edit and delete any article or profile.
-- **Pagination:** 10 articles per page on the article list and on each profile.
+- **Categories:** an article can have several categories, shown as badges that link to the category page. Category names (3–25 characters) are unique.
+- **Admins:** an admin can create and edit categories, and edit and delete any article or profile.
+- **Pagination:** 10 items per page on the article list, the category list, each profile and each category page.
 
 ## Run locally
 
@@ -43,6 +44,14 @@ There is no admin screen. To make a user an admin, run this in `bin/rails consol
 ```ruby
 User.find_by(username: "your_username").update(admin: true)
 ```
+
+## Tests
+
+```
+bin/rails test
+```
+
+Model, controller and integration tests with Minitest. They create their own records in `setup`, so there are no fixtures.
 
 ## Lint
 
