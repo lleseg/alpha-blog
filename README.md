@@ -72,3 +72,7 @@ Set these environment variables in Render:
 - `DATABASE_URL`: the Neon connection string.
 - `RAILS_MASTER_KEY`: the contents of `config/master.key`, which is not in the repository.
 - `NODE_VERSION`: 20.19 or newer, needed by the Sass build.
+
+## License
+
+[MIT](LICENSE)
